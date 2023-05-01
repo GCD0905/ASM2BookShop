@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using FPTBOOK_STORE.Areas.Identity.Data;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<FPTBOOK_STOREIdentityDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString") ?? throw new InvalidOperationException("Connection string 'FPTBOOK_STOREIdentityDbContextConnection' not found.")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("FPTBOOK_STOREIdentityDbContextConnection") ?? throw new InvalidOperationException("Connection string 'FPTBOOK_STOREIdentityDbContextConnection' not found.")));
 
 builder.Services.AddDefaultIdentity<FPTBOOKUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddRoles<IdentityRole>()
