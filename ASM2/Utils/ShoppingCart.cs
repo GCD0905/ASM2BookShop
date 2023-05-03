@@ -29,7 +29,7 @@ namespace FPTBOOK_STORE.Utils
         }
     }
      public class ShoppingCart {
-        public List<CartItem> Items { get; private set; }
+        public List<CartItem> Items { get ; private set; }
         public ShoppingCart() { 
 
             this.Items = new List<CartItem>();

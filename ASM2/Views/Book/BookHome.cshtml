@@ -45,12 +45,12 @@
                                 <h3 class="h2">Finally, Conan's journey to solve the case has crossed the 100-volume mark.</h3>
                                 <p style = "text-align: justify;">
                                     On the occasion of the 65th anniversary of establishment 
-                                    Kim Dong Publishing House has spent a lot of investment and care 
+              color           Kim Dong Publishing House has spent a lot of investment and care 
                                     for the 100th collection of stories about Conan with 3 editions 
                                     being released at the same time.
                                 </p>
                             </div>
-                        </div>
+margin-bottom            </div>
                     </div>
                 </div>
             </div>
@@ -88,7 +88,7 @@
 
 <form asp-controller="Book" asp-action="BookHome" method="get">
     <p>
-        <div class="search-box" style = "margin-left:13%; ">
+        <div class="search-box" style = "margin-left:13%; margin-top: 20px ">
             @* <select asp-for="BookCategory" asp-items="Model.Categories" class ="search-txt" style ="background-color: #2f3640; color : white; margin-bottom: 5px;">
             <option value="">Select Category</option>
             </select> *@
@@ -134,7 +134,7 @@
                 </ul>
             </div> *@
             @* <div class="col-lg-9"> *@
-                <div class="row" style = "margin-top:50px;">
+                <div class="row" style = "margin-top:100px;">
                     @foreach (var item in Model.Books)
                     {
                     <div class="col-md-3">
@@ -152,6 +152,15 @@
                                 <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
                                 </ul>
                                 <p class="text-center mb-0" style="margin-top: 10px"> <strong>$@(item.Price)</strong></p>
+                            </div>
+                            <div class="text-center mb-0" style="background-color: #B1A296;">
+                                <form  asp-action="AddToCart" method="post">
+                                <input type="hidden" name="id" value="@item.Id"/>
+                                <input type="hidden" name="name" value="@item.Name"/>
+                                <input type="hidden" name="price" value="@item.Price"/>
+                                <input type="hidden" class="btn btn-light" style = "width: 125px; background-color:#B1A296; margin-bottom: 10px" name="quantity" min=1 value=1 placeholder="Quantity"/>
+                                <input type="submit" value="Add To Cart" class="btn btn-primary" style="margin-bottom: 10px; background-color: #B47349; border-color: #B47349"/>   
+                                </form>
                             </div>
                         </div>  
                     </div>
